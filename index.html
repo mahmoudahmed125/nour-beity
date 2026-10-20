@@ -7,113 +7,131 @@
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Cairo',sans-serif;background:#FDF8F3;color:#3E2723}
-header{background:#fff;border-bottom:1px solid #F0E6D8;padding:14px 0;position:sticky;top:0;z-index:100}
-.header-inner{max-width:1200px;margin:0 auto;padding:0 30px;display:flex;justify-content:space-between;align-items:center}
-.logo{display:flex;align-items:center;gap:10px;cursor:pointer}
-.logo-icon{width:48px;height:48px;background:linear-gradient(135deg,#D4A574,#C4956A);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px}
-.logo h1{font-size:24px;font-weight:800;color:#5D4037}
-.logo span{font-size:12px;color:#8D6E63;display:block;margin-top:-4px}
-nav{display:flex;gap:28px}
-nav a{color:#5D4037;text-decoration:none;font-weight:600;font-size:15px;cursor:pointer}
-nav a:hover{color:#D4A574}
-.btn-login{background:#fff;border:1.5px solid #E0D5C8;padding:8px 20px;border-radius:25px;font-weight:600;cursor:pointer;color:#5D4037;font-family:inherit}
-.btn-kitchen{background:#5D4037;color:#fff;border:none;padding:8px 18px;border-radius:25px;font-weight:600;cursor:pointer;font-family:inherit}
-.hero{max-width:1200px;margin:0 auto;padding:50px 30px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;background:linear-gradient(180deg,#FDF8F3,#F5EDE4)}
-.hero-content h2{font-size:46px;font-weight:800;color:#3E2723;line-height:1.3;margin-bottom:18px}
-.hero-content p{font-size:18px;color:#6D4C41;margin-bottom:28px;line-height:1.7}
-.hero-btns{display:flex;gap:15px}
-.btn-primary{background:#5D4037;color:#fff;padding:14px 28px;border-radius:30px;border:none;font-weight:700;font-size:16px;cursor:pointer;font-family:inherit}
-.btn-secondary{background:#fff;color:#5D4037;padding:14px 28px;border-radius:30px;border:1.5px solid #E0D5C8;font-weight:600;font-size:16px;cursor:pointer;font-family:inherit}
-.hero-img{background:url('https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800') center/cover;border-radius:24px;height:380px;position:relative}
-.hero-img::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(212,165,116,0.1),transparent);border-radius:24px}
-.section{max-width:1200px;margin:0 auto;padding:40px 30px}
-.section-title{text-align:center;font-size:28px;font-weight:800;color:#3E2723;margin-bottom:30px}
-.section-title::before,.section-title::after{content:'🪷';margin:0 12px;font-size:20px}
-.filters{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:35px}
-.filter{background:#fff;border:1px solid #E8DDD0;padding:10px 20px;border-radius:25px;font-weight:600;cursor:pointer;color:#5D4037;font-family:inherit}
-.filter:hover,.filter.active{background:#5D4037;color:#fff;border-color:#5D4037}
-.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-.card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.06);transition:transform 0.3s;cursor:pointer}
-.card:hover{transform:translateY(-6px)}
-.card-img{height:160px;background:#F5E6D3 center/cover}
-.card-body{padding:16px}
-.card-body h3{font-size:18px;font-weight:700;margin-bottom:6px}
-.card-body p{font-size:13px;color:#8D6E63;margin-bottom:12px}
-.card-meta{display:flex;justify-content:space-between;align-items:center;font-size:13px}
-.dist{background:#E8F5E9;color:#2E7D32;padding:4px 10px;border-radius:12px;font-weight:600}
+body{font-family:'Cairo',sans-serif;background:#FBF7F2;color:#3E2723}
+header{background:#fff;padding:12px 0;border-bottom:1px solid #F0EBE3;position:sticky;top:0;z-index:100}
+.header-inner{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;justify-content:space-between;align-items:center}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-icon{font-size:36px}
+.logo-text h1{font-size:22px;font-weight:800;color:#5D4037}
+.logo-text span{font-size:11px;color:#A1887F;display:block;margin-top:-2px}
+nav{display:flex;gap:32px;align-items:center}
+nav a{color:#5D4037;text-decoration:none;font-weight:600;font-size:15px;cursor:pointer;position:relative}
+nav a.active{color:#5D4037}
+nav a.active::after{content:'';position:absolute;bottom:-8px;right:0;left:0;height:2px;background:#D4A574}
+.header-btns{display:flex;gap:12px;align-items:center}
+.btn-outline{background:#fff;border:1.5px solid #E8DDD0;padding:8px 18px;border-radius:22px;font-weight:600;cursor:pointer;color:#5D4037;font-family:inherit;font-size:14px}
+.icon-btn{background:none;border:none;font-size:20px;cursor:pointer;color:#5D4037}
+.hero{max-width:1200px;margin:0 auto;padding:60px 40px;display:grid;grid-template-columns:1.1fr 0.9fr;gap:50px;align-items:center;position:relative}
+.hero::before{content:'';position:absolute;top:20px;left:40px;width:200px;height:200px;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="60" font-size="50" opacity="0.06">🪷</text></svg>') no-repeat;pointer-events:none}
+.hero-img{position:relative}
+.hero-img img{width:100%;border-radius:20px;object-fit:cover;height:420px}
+.hero-content{text-align:right}
+.hero-content .lotus{font-size:28px;margin-bottom:10px;display:block}
+.hero-content h2{font-size:48px;font-weight:800;color:#3E2723;line-height:1.25;margin-bottom:16px}
+.hero-content p{font-size:17px;color:#6D4C41;line-height:1.8;margin-bottom:30px;max-width:420px}
+.hero-btns{display:flex;gap:14px}
+.btn-primary{background:#5D4037;color:#fff;padding:14px 28px;border-radius:28px;border:none;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit}
+.btn-secondary{background:#fff;color:#5D4037;padding:14px 28px;border-radius:28px;border:1.5px solid #E0D5C8;font-weight:600;font-size:15px;cursor:pointer;font-family:inherit}
+.section{max-width:1200px;margin:0 auto;padding:30px 40px 50px}
+.section-title{text-align:center;font-size:26px;font-weight:800;color:#3E2723;margin-bottom:35px;display:flex;align-items:center;justify-content:center;gap:15px}
+.section-title::before,.section-title::after{content:'';flex:1;max-width:80px;height:1px;background:#E0D5C8}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.05);transition:transform 0.25s;cursor:pointer;position:relative}
+.card:hover{transform:translateY(-5px)}
+.card-img{height:170px;background:#F5E6D3 center/cover;position:relative}
+.card-heart{position:absolute;top:12px;left:12px;background:#fff;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
+.card-body{padding:14px 16px 16px}
+.card-body h3{font-size:16px;font-weight:700;margin-bottom:4px}
+.card-body p{font-size:13px;color:#8D6E63;margin-bottom:10px}
+.card-meta{display:flex;justify-content:space-between;align-items:center;font-size:12px}
+.loc{color:#8D6E63;display:flex;align-items:center;gap:4px}
 .rating{color:#D4A574;font-weight:700}
 .page{display:none}
 .page.active{display:block}
-.form-box{background:#fff;max-width:480px;margin:40px auto;padding:35px;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,0.06)}
-.form-box input,.form-box select,.form-box textarea{width:100%;padding:12px;margin:8px 0 16px;border:1px solid #E8DDD0;border-radius:10px;font-family:inherit;font-size:15px}
-.form-box label{font-weight:600;color:#5D4037}
-footer{background:#3E2723;color:#D7CCC8;text-align:center;padding:40px 20px;margin-top:50px}
-footer h3{color:#D4A574;font-size:22px;margin-bottom:8px}
-@media(max-width:900px){.hero{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}nav{display:none}}
-@media(max-width:600px){.cards{grid-template-columns:1fr}.hero-content h2{font-size:32px}}
+.form-box{background:#fff;max-width:460px;margin:50px auto;padding:35px;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,0.06)}
+.form-box input,.form-box select,.form-box textarea{width:100%;padding:12px;margin:6px 0 14px;border:1px solid #E8DDD0;border-radius:10px;font-family:inherit;font-size:15px}
+.form-box label{font-weight:600;font-size:14px;color:#5D4037}
+footer{background:#3E2723;color:#D7CCC8;text-align:center;padding:40px 20px}
+footer h3{color:#D4A574;font-size:20px;margin-bottom:6px}
+@media(max-width:900px){.hero{grid-template-columns:1fr;padding:40px 20px}.cards{grid-template-columns:repeat(2,1fr)}nav{display:none}.header-inner{padding:0 20px}}
+@media(max-width:500px){.cards{grid-template-columns:1fr}.hero-content h2{font-size:34px}}
 </style>
 </head>
 <body>
 
 <header>
 <div class="header-inner">
-<div class="logo" onclick="show('home')">
+<div class="logo">
 <div class="logo-icon">🪷</div>
-<div><h1>نور بيتي</h1><span>أكل بيتي زي زمان</span></div>
+<div class="logo-text">
+<h1>نور بيتي</h1>
+<span>أكل بيتي زي زمان</span>
+</div>
 </div>
 <nav>
-<a onclick="show('home')">الرئيسية</a>
-<a onclick="show('orders')">طلباتي</a>
+<a class="active" onclick="show('home')">الرئيسية</a>
+<a onclick="show('home')">المطابخ</a>
+<a>التصنيفات</a>
+<a>كيف نعمل</a>
+<a>عن نور بيتي</a>
 </nav>
-<div style="display:flex;gap:10px">
-<button class="btn-kitchen" onclick="show('kitchen-login')">دخول مطبخ</button>
-<button class="btn-login" onclick="show('login')">دخول كعميل</button>
+<div class="header-btns">
+<button class="icon-btn">👤</button>
+<button class="btn-outline" onclick="show('login')">تسجيل الدخول</button>
 </div>
 </div>
 </header>
 
 <div id="home" class="page active">
 <div class="hero">
+<div class="hero-img">
+<img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=700" alt="أكل بيتي">
+</div>
 <div class="hero-content">
+<span class="lotus">🪷</span>
 <h2>أكل بيتي مصري<br>أصيل وشهي</h2>
-<p>اكتشف مطابخ بيوت مصرية قريبة منك واطلب أطباقاً مطبوخة بحب من قلب البيت</p>
+<p>اكتشف مطابخ بيوت مصرية قريبة منك واطلب أطباقاً مطبوخة بحب</p>
 <div class="hero-btns">
-<button class="btn-primary" onclick="show('home')">تصفح المطابخ</button>
-<button class="btn-secondary">كيف نعمل</button>
+<button class="btn-primary">تصفح المطابخ</button>
+<button class="btn-secondary">🏠 كيف نعمل</button>
 </div>
 </div>
-<div class="hero-img"></div>
 </div>
 
 <div class="section">
-<h2 class="section-title">مطابخ مميزة قريبة منك</h2>
-<div class="filters">
-<div class="filter active">الكل</div>
-<div class="filter">محشي</div>
-<div class="filter">فراخ ولحمة</div>
-<div class="filter">مشويات</div>
-<div class="filter">سمك</div>
-<div class="filter">مكرونة وطواجن</div>
-<div class="filter">أكل بيتي شعبي</div>
-<div class="filter">حلويات</div>
-</div>
+<h2 class="section-title">🪷 مطابخ مميزة قريبة منك 🪷</h2>
 <div class="cards">
 <div class="card" onclick="show('kitchen')">
-<div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400')"></div>
-<div class="card-body"><h3>مطبخ أم عمرو</h3><p>أكلات بيتي تقليدية</p><div class="card-meta"><span class="dist">الدقي</span><span class="rating">★ 4.8</span></div></div>
+<div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400')"><div class="card-heart">♡</div></div>
+<div class="card-body">
+<h3>مطبخ أم عمرو</h3>
+<p>أكلات بيتي تقليدية</p>
+<div class="card-meta"><span class="loc">📍 الدقي، الجيزة</span><span class="rating">4.8 ★</span></div>
+</div>
 </div>
 <div class="card" onclick="show('kitchen')">
-<div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400')"></div>
-<div class="card-body"><h3>مطبخ ست الكل</h3><p>مأكولات منزلية صحية</p><div class="card-meta"><span class="dist">المعادي</span><span class="rating">★ 4.7</span></div></div>
+<div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400')"><div class="card-heart">♡</div></div>
+<div class="card-body">
+<h3>مطبخ ست الكل</h3>
+<p>مأكولات منزلية صحية</p>
+<div class="card-meta"><span class="loc">📍 المعادي، القاهرة</span><span class="rating">4.7 ★</span></div>
+</div>
 </div>
 <div class="card" onclick="show('kitchen')">
-<div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=400')"></div>
-<div class="card-body"><h3>مطبخ أم خالد</h3><p>مشويات وأكل بيتي</p><div class="card-meta"><span class="dist">مدينة نصر</span><span class="rating">★ 4.9</span></div></div>
+<div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=400')"><div class="card-heart">♡</div></div>
+<div class="card-body">
+<h3>مطبخ أم خالد</h3>
+<p>مشويات وأكل بيتي</p>
+<div class="card-meta"><span class="loc">📍 مدينة نصر، القاهرة</span><span class="rating">4.9 ★</span></div>
+</div>
 </div>
 <div class="card" onclick="show('kitchen')">
-<div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=400')"></div>
-<div class="card-body"><h3>مطبخ أم سارة</h3><p>شوربات ومخبوزات</p><div class="card-meta"><span class="dist">مصر الجديدة</span><span class="rating">★ 4.6</span></div></div>
+<div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=400')"><div class="card-heart">♡</div></div>
+<div class="card-body">
+<h3>مطبخ أم سارة</h3>
+<p>شوربات ومخبوزات</p>
+<div class="card-meta"><span class="loc">📍 مصر الجديدة، القاهرة</span><span class="rating">4.6 ★</span></div>
+</div>
 </div>
 </div>
 </div>
@@ -123,15 +141,14 @@ footer h3{color:#D4A574;font-size:22px;margin-bottom:8px}
 <div class="section">
 <button onclick="show('home')" style="background:none;border:none;font-size:16px;cursor:pointer;margin-bottom:20px;color:#5D4037;font-family:inherit">← رجوع</button>
 <div style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.06)">
-<div style="height:250px;background:url('https://images.unsplash.com/photo-1547592166-23ac45744acd?w=900') center/cover"></div>
+<div style="height:280px;background:url('https://images.unsplash.com/photo-1547592166-23ac45744acd?w=1000') center/cover"></div>
 <div style="padding:30px">
-<h2 style="font-size:32px;margin-bottom:8px">مطبخ أم خالد</h2>
-<p style="color:#8D6E63;margin-bottom:15px">أكل بيتي مصري أصيل • مدينة نصر، القاهرة</p>
-<div style="display:flex;gap:15px;margin-bottom:25px"><span class="dist">مدينة نصر</span><span class="rating" style="font-size:18px">★ 4.9</span></div>
-<h3 style="margin-bottom:20px">الأطباق</h3>
+<h2 style="font-size:30px;margin-bottom:8px">مطبخ أم خالد</h2>
+<p style="color:#8D6E63;margin-bottom:20px">أكل بيتي مصري أصيل • مدينة نصر، القاهرة</p>
+<h3 style="margin-bottom:18px">الأطباق</h3>
 <div class="cards">
-<div class="card" style="cursor:default"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1547592166-23ac45744acd?w=300')"></div><div class="card-body"><h3>محشي كرنب</h3><p>ورق كرنب محشي</p><div class="card-meta"><strong style="color:#2E7D32;font-size:18px">45 ج.م</strong><button class="btn-primary" style="padding:8px 16px;font-size:14px" onclick="alert('تمت الإضافة')">أضف</button></div></div></div>
-<div class="card" style="cursor:default"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=300')"></div><div class="card-body"><h3>فراخ مشوية</h3><p>فراخ مشوية على الفحم</p><div class="card-meta"><strong style="color:#2E7D32;font-size:18px">85 ج.م</strong><button class="btn-primary" style="padding:8px 16px;font-size:14px" onclick="alert('تمت الإضافة')">أضف</button></div></div></div>
+<div class="card" style="cursor:default"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1547592166-23ac45744acd?w=300')"></div><div class="card-body"><h3>محشي كرنب</h3><p>ورق كرنب محشي بالأرز</p><div class="card-meta"><strong style="color:#2E7D32;font-size:17px">45 ج.م</strong><button class="btn-primary" style="padding:7px 16px;font-size:13px" onclick="alert('تمت الإضافة')">أضف</button></div></div></div>
+<div class="card" style="cursor:default"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=300')"></div><div class="card-body"><h3>فراخ مشوية</h3><p>فراخ مشوية على الفحم</p><div class="card-meta"><strong style="color:#2E7D32;font-size:17px">85 ج.م</strong><button class="btn-primary" style="padding:7px 16px;font-size:13px" onclick="alert('تمت الإضافة')">أضف</button></div></div></div>
 </div>
 </div>
 </div>
@@ -140,76 +157,46 @@ footer h3{color:#D4A574;font-size:22px;margin-bottom:8px}
 
 <div id="login" class="page">
 <div class="form-box" style="text-align:center">
-<div style="font-size:50px;margin-bottom:15px">👤</div>
-<h2 style="margin-bottom:10px">تسجيل الدخول كعميل</h2>
-<p style="color:#8D6E63;margin-bottom:25px">سجّل دخولك عشان تقدر تطلب</p>
+<div style="font-size:48px;margin-bottom:12px">👤</div>
+<h2 style="margin-bottom:8px">تسجيل الدخول</h2>
+<p style="color:#8D6E63;margin-bottom:22px">سجّل دخولك عشان تقدر تطلب</p>
 <button class="btn-primary" style="width:100%;margin-bottom:12px">🔵 الدخول بجوجل</button>
-<div style="color:#999;margin:15px 0">أو</div>
+<div style="color:#999;margin:14px 0">أو</div>
 <input type="tel" placeholder="رقم التليفون" style="text-align:center">
 <button class="btn-primary" style="width:100%">إرسال كود</button>
+<p style="margin-top:20px;font-size:14px"><a onclick="show('kitchen-login')" style="color:#D4A574;cursor:pointer">دخول كصاحب مطبخ</a></p>
 </div>
 </div>
 
 <div id="kitchen-login" class="page">
 <div class="form-box" style="text-align:center">
-<div style="font-size:50px;margin-bottom:15px">👨‍🍳</div>
-<h2 style="margin-bottom:10px">دخول صاحب المطبخ</h2>
-<p style="color:#8D6E63;margin-bottom:25px">ادخل لإدارة مطبخك</p>
-<button class="btn-primary" style="width:100%;margin-bottom:12px">🔵 الدخول بجوجل</button>
-<div style="color:#999;margin:15px 0">أو برقم التليفون</div>
-<input type="tel" placeholder="01xxxxxxxxx" style="text-align:center">
-<button class="btn-primary" style="width:100%;margin-bottom:20px" onclick="show('dashboard')">دخول</button>
+<div style="font-size:48px;margin-bottom:12px">👨‍🍳</div>
+<h2 style="margin-bottom:8px">دخول صاحب المطبخ</h2>
+<button class="btn-primary" style="width:100%;margin:15px 0">🔵 الدخول بجوجل</button>
+<input type="tel" placeholder="رقم التليفون" style="text-align:center">
+<button class="btn-primary" style="width:100%;margin-bottom:15px" onclick="show('dashboard')">دخول</button>
 <button class="btn-secondary" style="width:100%" onclick="show('submit')">سجّل مطبخك</button>
 </div>
 </div>
 
 <div id="submit" class="page">
 <div class="form-box">
-<h2 style="text-align:center;margin-bottom:20px">سجّل مطبخك</h2>
+<h2 style="text-align:center;margin-bottom:18px">سجّل مطبخك</h2>
 <label>اسم المطبخ</label><input type="text" placeholder="مطبخ أم أحمد">
 <label>اسمك</label><input type="text">
-<label>رقم التليفون</label><input type="tel" placeholder="01xxxxxxxxx">
-<label>المحافظة</label>
-<select><option>القاهرة</option><option>الجيزة</option><option>الإسكندرية</option><option>الشرقية</option><option>الدقهلية</option></select>
-<label>المدينة / الحي</label><input type="text" placeholder="المعادي، مدينة نصر...">
-<label>أنواع الأكل</label><input type="text" placeholder="محشي، فراخ، حلويات...">
-<button class="btn-primary" style="width:100%;margin-top:10px" onclick="alert('تم إرسال طلبك!')">إرسال الطلب</button>
-</div>
-</div>
-
-<div id="checkout" class="page">
-<div class="form-box">
-<h2 style="text-align:center;margin-bottom:20px">إتمام الطلب</h2>
-<label>الاسم</label><input type="text">
 <label>رقم التليفون</label><input type="tel">
-<label>المحافظة</label>
-<select><option>القاهرة</option><option>الجيزة</option><option>الإسكندرية</option><option>الشرقية</option><option>الدقهلية</option></select>
-<label>المدينة / الحي</label><input type="text" placeholder="اكتب المدينة أو الحي">
-<label>العنوان بالتفصيل</label><textarea rows="2"></textarea>
-<button class="btn-primary" style="width:100%" onclick="alert('تم تأكيد الطلب!')">تأكيد الطلب</button>
-</div>
-</div>
-
-<div id="orders" class="page">
-<div class="section">
-<h2 class="section-title">طلباتي</h2>
-<div style="background:#fff;padding:18px;border-radius:12px;margin-bottom:12px;display:flex;justify-content:space-between;box-shadow:0 2px 10px rgba(0,0,0,0.05)">
-<div><strong>مطبخ أم خالد</strong><br><small style="color:#8D6E63">محشي + فراخ</small></div>
-<span style="background:#E3F2FD;color:#1565C0;padding:6px 14px;border-radius:15px;font-size:13px;font-weight:600">بيتحضّر</span>
-</div>
+<label>المحافظة</label><select><option>القاهرة</option><option>الجيزة</option><option>الإسكندرية</option><option>الشرقية</option></select>
+<label>المدينة / الحي</label><input type="text">
+<button class="btn-primary" style="width:100%" onclick="alert('تم إرسال طلبك!')">إرسال الطلب</button>
 </div>
 </div>
 
 <div id="dashboard" class="page">
 <div class="section">
 <h2 class="section-title">لوحة المطبخ</h2>
-<div style="background:#FFF8E1;border:1px dashed #D4A574;border-radius:12px;padding:18px;margin-bottom:25px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
-<div><strong>عندك عرض؟</strong><p style="color:#8D6E63;font-size:14px">اطلب صورة إعلانية للصفحة الرئيسية</p></div>
-<button class="btn-primary" onclick="alert('تم إرسال طلب الإعلان')">اطلب إعلان</button>
-</div>
-<div class="cards">
-<div class="card" style="cursor:default"><div class="card-body"><h3>محشي كرنب</h3><p>45 ج.م • متاح</p></div></div>
-<div class="card" style="cursor:default"><div class="card-body"><h3>فراخ مشوية</h3><p>85 ج.م • متاح</p></div></div>
+<div style="background:#FFF8E1;border:1px dashed #D4A574;border-radius:12px;padding:16px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:center">
+<div><strong>عندك عرض؟</strong><p style="color:#8D6E63;font-size:14px">اطلب صورة إعلانية</p></div>
+<button class="btn-primary" onclick="alert('تم إرسال الطلب')">اطلب إعلان</button>
 </div>
 </div>
 </div>
@@ -217,22 +204,18 @@ footer h3{color:#D4A574;font-size:22px;margin-bottom:8px}
 <footer>
 <h3>نور بيتي</h3>
 <p>أكل بيتي من قلب بيوت مصر</p>
-<p style="margin-top:12px;font-size:13px;opacity:0.6">© 2026 نور بيتي • جميع أنحاء جمهورية مصر العربية</p>
+<p style="margin-top:10px;font-size:13px;opacity:0.6">© 2026 نور بيتي</p>
 </footer>
 
 <script>
 function show(id){
 document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+document.querySelectorAll('nav a').forEach(a=>a.classList.remove('active'));
 const el=document.getElementById(id);
 if(el)el.classList.add('active');
+if(id==='home')document.querySelector('nav a').classList.add('active');
 window.scrollTo(0,0);
 }
-document.querySelectorAll('.filter').forEach(f=>{
-f.addEventListener('click',function(){
-document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));
-this.classList.add('active');
-});
-});
 </script>
 </body>
 </html>
