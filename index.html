@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>نور بيتي - أكل بيتي مصري أصيل</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FDF8F3;--sf:#fff;--ink:#3E2723;--mut:#8D6E63;--ac:#5D4037;--hl:#D4A574;--ln:#E8DDD0}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Tajawal,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+header{background:#fff;border-bottom:1px solid var(--ln);padding:14px 0;position:sticky;top:0;z-index:100}
+.header-inner{max-width:1100px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center}
+.logo{display:flex;align-items:center;gap:10px;cursor:pointer}
+.logo-icon{width:46px;height:46px;background:linear-gradient(135deg,#D4A574,#C4956A);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px}
+.logo h1{font-size:22px;font-weight:800;color:var(--ac)}
+.logo span{font-size:12px;color:var(--mut);display:block;margin-top:-3px}
+nav{display:flex;gap:20px}
+nav a{color:var(--ac);text-decoration:none;font-weight:600;cursor:pointer;font-size:15px}
+.btn{background:var(--ac);color:#fff;border:none;padding:8px 18px;border-radius:20px;font-weight:600;cursor:pointer;font-family:inherit}
+.btn-outline{background:#fff;color:var(--ac);border:1.5px solid var(--ln)}
+.page{display:none;max-width:1100px;margin:0 auto;padding:30px 20px}
+.page.active{display:block}
+.hero{text-align:center;padding:40px 20px}
+.hero h2{font-size:40px;font-weight:800;color:var(--ac);margin-bottom:12px}
+.hero p{font-size:18px;color:var(--mut);max-width:500px;margin:0 auto 20px}
+.filters{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:25px 0}
+.filter{background:#fff;border:1px solid var(--ln);padding:8px 16px;border-radius:20px;font-weight:600;cursor:pointer;font-size:14px}
+.filter.active{background:var(--ac);color:#fff;border-color:var(--ac)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
+.card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,0.06);cursor:pointer;transition:transform 0.2s}
+.card:hover{transform:translateY(-4px)}
+.card-img{height:150px;background:#F5E6D3 center/cover}
+.card-body{padding:14px}
+.card-body h3{font-size:17px;font-weight:700}
+.card-body p{font-size:13px;color:var(--mut);margin:6px 0}
+.meta{display:flex;justify-content:space-between;font-size:13px}
+.dist{background:#E8F5E9;color:#2E7D32;padding:3px 8px;border-radius:10px;font-weight:600}
+.form-box{background:#fff;max-width:450px;margin:30px auto;padding:30px;border-radius:14px;box-shadow:0 4px 15px rgba(0,0,0,0.06)}
+.form-box input,.form-box select,.form-box textarea{width:100%;padding:12px;margin:6px 0 14px;border:1px solid var(--ln);border-radius:10px;font-family:inherit;font-size:15px}
+.form-box label{font-weight:600;font-size:14px}
+.section-title{text-align:center;font-size:26px;font-weight:800;margin-bottom:25px;color:var(--ac)}
+footer{background:var(--ac);color:#D7CCC8;text-align:center;padding:35px 20px;margin-top:40px}
+footer h3{color:var(--hl);font-size:20px}
+@media(max-width:700px){nav{display:none}.hero h2{font-size:30px}}
+</style>
+</head>
+<body>
+
+<header>
+<div class="header-inner">
+<div class="logo" onclick="show('home')">
+<div class="logo-icon">🪷</div>
+<div><h1>نور بيتي</h1><span>أكل بيتي زي زمان</span></div>
+</div>
+<nav>
+<a onclick="show('home')">الرئيسية</a>
+<a onclick="show('orders')">طلباتي</a>
+</nav>
+<div style="display:flex;gap:8px">
+<button class="btn" onclick="show('kitchen-login')" style="background:#2E7D32">دخول مطبخ</button>
+<button class="btn btn-outline" onclick="show('login')">دخول كعميل</button>
+</div>
+</div>
+</header>
+
+<div id="home" class="page active">
+<div class="hero">
+<h2>أكل بيتي مصري أصيل</h2>
+<p>اكتشف مطابخ بيوت مصرية قريبة منك واطلب أطباقاً مطبوخة بحب</p>
+<div style="background:#fff;display:inline-block;padding:12px 24px;border-radius:30px;box-shadow:0 4px 15px rgba(0,0,0,0.08);color:var(--mut)">📍 جميع أنحاء جمهورية مصر العربية</div>
+</div>
+<div class="filters">
+<div class="filter active">الكل</div>
+<div class="filter">محشي</div>
+<div class="filter">فراخ ولحمة</div>
+<div class="filter">مشويات</div>
+<div class="filter">سمك</div>
+<div class="filter">مكرونة وطواجن</div>
+<div class="filter">أكل بيتي شعبي</div>
+<div class="filter">حلويات</div>
+</div>
+<div class="cards">
+<div class="card" onclick="show('kitchen')"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400')"></div><div class="card-body"><h3>مطبخ أم خالد</h3><p>أكل بيتي مصري أصيل</p><div class="meta"><span class="dist">مدينة نصر</span><span style="color:var(--hl)">★ 4.8</span></div></div></div>
+<div class="card" onclick="show('kitchen')"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400')"></div><div class="card-body"><h3>مطبخ ست البيت</h3><p>وصفات يومية بطعم البيت</p><div class="meta"><span class="dist">المعادي</span><span style="color:var(--hl)">★ 4.9</span></div></div></div>
+<div class="card" onclick="show('kitchen')"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400')"></div><div class="card-body"><h3>مطبخ أم محمد</h3><p>حلويات بيتي أصيلة</p><div class="meta"><span class="dist">مصر الجديدة</span><span style="color:var(--hl)">★ 4.7</span></div></div></div>
+<div class="card" onclick="show('kitchen')"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=400')"></div><div class="card-body"><h3>مطبخ أم سارة</h3><p>شوربات ومخبوزات</p><div class="meta"><span class="dist">الزقازيق</span><span style="color:var(--hl)">★ 4.6</span></div></div></div>
+</div>
+</div>
+
+<div id="kitchen" class="page">
+<button onclick="show('home')" style="background:none;border:none;cursor:pointer;margin-bottom:15px;font-size:16px">← رجوع</button>
+<div style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,0.06)">
+<div style="height:200px;background:url('https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800') center/cover"></div>
+<div style="padding:25px">
+<h2 style="font-size:28px">مطبخ أم خالد</h2>
+<p style="color:var(--mut);margin:8px 0">أكل بيتي مصري أصيل • مدينة نصر، القاهرة</p>
+<h3 style="margin:20px 0 15px">الأطباق</h3>
+<div class="cards">
+<div class="card" style="cursor:default"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1547592166-23ac45744acd?w=300')"></div><div class="card-body"><h3>محشي كرنب</h3><p>ورق كرنب محشي</p><div class="meta"><strong style="color:#2E7D32">45 ج.م</strong><button class="btn" style="padding:6px 14px;font-size:13px" onclick="alert('تمت الإضافة')">أضف</button></div></div></div>
+<div class="card" style="cursor:default"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=300')"></div><div class="card-body"><h3>فراخ مشوية</h3><p>فراخ مشوية على الفحم</p><div class="meta"><strong style="color:#2E7D32">85 ج.م</strong><button class="btn" style="padding:6px 14px;font-size:13px" onclick="alert('تمت الإضافة')">أضف</button></div></div></div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="login" class="page">
+<div class="form-box" style="text-align:center">
+<div style="font-size:50px;margin-bottom:10px">👤</div>
+<h2 style="margin-bottom:8px">تسجيل الدخول كعميل</h2>
+<p style="color:var(--mut);margin-bottom:20px">سجّل دخولك عشان تقدر تطلب</p>
+<button class="btn" style="width:100%;margin-bottom:12px;background:#fff;color:#333;border:1px solid #ddd">🔵 الدخول بجوجل</button>
+<div style="color:#999;margin:12px 0">أو</div>
+<input type="tel" placeholder="رقم التليفون" style="text-align:center">
+<button class="btn" style="width:100%">إرسال كود</button>
+</div>
+</div>
+
+<div id="kitchen-login" class="page">
+<div class="form-box" style="text-align:center">
+<div style="font-size:50px;margin-bottom:10px">👨‍🍳</div>
+<h2 style="margin-bottom:8px">دخول صاحب المطبخ</h2>
+<p style="color:var(--mut);margin-bottom:20px">ادخل لإدارة مطبخك</p>
+<button class="btn" style="width:100%;margin-bottom:12px;background:#fff;color:#333;border:1px solid #ddd">🔵 الدخول بجوجل</button>
+<div style="color:#999;margin:12px 0">أو برقم التليفون</div>
+<input type="tel" placeholder="01xxxxxxxxx" style="text-align:center">
+<button class="btn" style="width:100%;margin-bottom:15px" onclick="show('dashboard')">دخول</button>
+<button class="btn btn-outline" style="width:100%" onclick="show('submit')">سجّل مطبخك</button>
+</div>
+</div>
+
+<div id="submit" class="page">
+<div class="form-box">
+<h2 class="section-title">سجّل مطبخك</h2>
+<label>اسم المطبخ</label><input type="text" placeholder="مطبخ أم أحمد">
+<label>اسمك</label><input type="text">
+<label>رقم التليفون</label><input type="tel" placeholder="01xxxxxxxxx">
+<label>المحافظة</label>
+<select><option>القاهرة</option><option>الجيزة</option><option>الإسكندرية</option><option>الشرقية</option><option>الدقهلية</option><option>القليوبية</option></select>
+<label>المدينة / الحي</label><input type="text" placeholder="المعادي، مدينة نصر...">
+<label>أنواع الأكل</label><input type="text" placeholder="محشي، فراخ، حلويات...">
+<button class="btn" style="width:100%;margin-top:10px" onclick="alert('تم إرسال طلبك!')">إرسال الطلب</button>
+</div>
+</div>
+
+<div id="checkout" class="page">
+<div class="form-box">
+<h2 class="section-title">إتمام الطلب</h2>
+<label>الاسم</label><input type="text">
+<label>رقم التليفون</label><input type="tel">
+<label>المحافظة</label>
+<select><option>القاهرة</option><option>الجيزة</option><option>الإسكندرية</option><option>الشرقية</option><option>الدقهلية</option></select>
+<label>المدينة / الحي</label><input type="text">
+<label>العنوان بالتفصيل</label><textarea rows="2"></textarea>
+<button class="btn" style="width:100%" onclick="alert('تم تأكيد الطلب!')">تأكيد الطلب</button>
+</div>
+</div>
+
+<div id="orders" class="page">
+<h2 class="section-title">طلباتي</h2>
+<div style="background:#fff;padding:16px;border-radius:12px;margin-bottom:10px;display:flex;justify-content:space-between">
+<div><strong>مطبخ أم خالد</strong><br><small style="color:var(--mut)">محشي + فراخ</small></div>
+<span style="background:#E3F2FD;color:#1565C0;padding:5px 12px;border-radius:12px;font-size:13px;font-weight:600">بيتحضّر</span>
+</div>
+</div>
+
+<div id="dashboard" class="page">
+<h2 class="section-title">لوحة المطبخ</h2>
+<div style="background:#FFF8E1;border:1px dashed var(--hl);border-radius:12px;padding:16px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+<div><strong>عندك عرض؟</strong><p style="color:var(--mut);font-size:14px">اطلب صورة إعلانية للصفحة الرئيسية</p></div>
+<button class="btn" onclick="alert('تم إرسال طلب الإعلان')">اطلب إعلان</button>
+</div>
+<div class="cards">
+<div class="card" style="cursor:default"><div class="card-body"><h3>محشي كرنب</h3><p>45 ج.م • متاح</p></div></div>
+<div class="card" style="cursor:default"><div class="card-body"><h3>فراخ مشوية</h3><p>85 ج.م • متاح</p></div></div>
+</div>
+</div>
+
+<footer>
+<h3>نور بيتي</h3>
+<p>أكل بيتي من قلب بيوت مصر</p>
+<p style="margin-top:10px;font-size:13px;opacity:0.6">© 2026 نور بيتي • جميع أنحاء جمهورية مصر العربية</p>
+</footer>
+
+<script>
+function show(id){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+const el=document.getElementById(id);
+if(el)el.classList.add('active');
+window.scrollTo(0,0);
+}
+document.querySelectorAll('.filter').forEach(f=>{
+f.addEventListener('click',function(){
+document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));
+this.classList.add('active');
+});
+});
+</script>
+</body>
+</html>
